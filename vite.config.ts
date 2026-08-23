@@ -5,6 +5,10 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // GitHub Pages serves this project from /Blog-Platform-with-Comments/.
+    // Without this, Vite emits asset URLs rooted at / and the deployed page
+    // cannot load its JavaScript bundle.
+    base: '/Blog-Platform-with-Comments/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

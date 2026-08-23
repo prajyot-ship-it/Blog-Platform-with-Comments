@@ -33,11 +33,19 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Build site
+        # GitHub Pages only serves static files. Build the Vite client and
+        # publish its generated index.html and assets, never the source tree.
+        run: bun run build:client
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Publish Vite's compiled static site, not the source files.
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
