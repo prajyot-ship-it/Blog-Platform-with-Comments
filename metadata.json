@@ -2,5 +2,7 @@
   "name": "Blog Platform with Comments",
   "description": "A full-stack blogging platform featuring user authentication, post creation and management, interactive threaded comments, and RESTful API backend.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
